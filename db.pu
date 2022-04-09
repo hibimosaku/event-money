@@ -1,0 +1,32 @@
+@startuml
+entity "Event"{
+  id<<PK>>
+  occurrence_date
+  category_event<<FK>>
+  content
+  ref_url
+  location<<FK>>
+}
+
+entity "Category"{
+  id<<PK>>
+  name
+}
+
+entity "CategoryMinor"{
+  id<<PK>>
+  categorys<<FK>>
+  name
+}
+
+entity "Location"{
+  name<<PK>>
+  gps
+}
+
+Event ||..|{ Category
+Event ||..|{ Location
+Category ||..o{ CategoryMinor
+
+@enduml
+

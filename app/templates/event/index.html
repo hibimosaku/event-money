@@ -1,0 +1,17 @@
+{% load render_bundle from webpack_loader %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>django</title>
+  </head>
+  <body>
+    <h1>django</h1>
+    <div id="app">
+      <router-view></router-view>
+    </div>
+    {% render_bundle 'main' %}
+  </body>
+</html>
